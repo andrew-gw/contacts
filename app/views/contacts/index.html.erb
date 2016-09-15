@@ -16,23 +16,20 @@
 <div class="list-group">
   <% @contacts.each do |contact| %>
   <%= link_to contact_path(contact), :class => 'list-group-item' do %>
-  <div class="col-sm-6">
-    <%= contact.name %>
-    <%= contact.email %>
-    <%= contact.phone %>
-    <%= contact.avatar %>
-  </div>
 
-  <div class="col-sm-6">
-    <%= link_to edit_contact_path(contact), :class => "btn btn-warning btn-sm" do %>
-    <span class="glyphicon glyphicon-edit"></span> Edit
-    <% end %>
+  <%= contact.name %>
+  <%= contact.email %>
+  <%= contact.phone %>
+  <%= contact.avatar %>
 
-    <%= link_to contact_path(contact), method: :delete,
-    data: { confirm: 'Delete ' + contact.fname + ' ' + contact.lname + '?' }, :class => "btn btn-danger btn-sm" do %>
-    <span class="glyphicon glyphicon-trash"></span> Remove
-    <% end %>
-  </div>
+  <%= link_to edit_contact_path(contact), :class => "btn btn-warning btn-sm" do %>
+  <span class="glyphicon glyphicon-edit"></span> Edit
+  <% end %>
+
+  <%= link_to contact_path(contact), method: :delete,
+  data: { confirm: 'Delete ' + contact.fname + ' ' + contact.lname + '?' }, :class => "btn btn-danger btn-sm" do %>
+  <span class="glyphicon glyphicon-trash"></span> Remove
+  <% end %>
 
   <% end %>
   <% end %>

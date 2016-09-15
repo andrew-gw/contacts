@@ -14,33 +14,33 @@
     </div>
   <% end %>
 
-  <p>
-    <%= f.label 'First Name' %><br>
-    <%= f.text_field :fname %>
-  </p>
+  <div class="form-group">
+    <%= f.label 'fname', 'First Name' %><br>
+    <%= f.text_field :fname, :class => "form-control" %>
+  </div>
 
-  <p>
-    <%= f.label 'Last Name' %><br>
-    <%= f.text_field :lname %>
-  </p>
+  <div class="form-group">
+    <%= f.label 'lname', 'Last Name' %><br>
+    <%= f.text_field :lname, :class => "form-control" %>
+  </div>
 
-  <p>
-    <%= f.label 'E-mail' %><br>
-    <%= f.text_field :email %>
-  </p>
+  <div class="form-group">
+    <%= f.label 'email', 'E-mail Address' %><br>
+    <%= f.text_field :email, :class => "form-control" %>
+  </div>
 
-  <p>
-    <%= f.label 'Phone Number' %><br>
-    <%= f.text_field :phone %>
-  </p>
+  <div class="form-group">
+    <%= f.label 'phone', 'Phone Number' %><br>
+    <%= f.text_field :phone, :class => "form-control" %>
+  </div>
 
-  <p>
-    <%= f.label 'Photo' %><br>
-    <%= f.text_field :avatar %>
-  </p>
+  <div class="form-group">
+    <%= f.label 'photo', 'Photo' %><br>
+    <%= f.text_field :avatar, :class => "form-control" %>
+  </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+   <i class="glyphicon glyphicon-ok"></i> Done
+  <% end %>
 
 <% end %>

@@ -1,13 +1,13 @@
-<h1>Listing contacts</h1>
-
-<%= link_to new_contact_path, :class => "btn btn-primary" do %>
-  <span class="glyphicon glyphicon-plus"></span> Add Contact
-<% end %>
+<div class="page-header">
+  <h1>Contacts</h1>
+  <%= link_to new_contact_path, :class => "btn btn-primary" do %>
+    <span class="glyphicon glyphicon-plus"></span> Add Contact
+  <% end %>
+</div>
 
 <table>
   <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
+    <th>Name</th>
     <th>E-mail</th>
     <th>Phone</th>
     <th>Avatar</th>
@@ -16,16 +16,22 @@
 
   <% @contacts.each do |contact| %>
     <tr>
-      <td><%= contact.fname %></td>
-      <td><%= contact.lname %></td>
+      <td><%= contact.fname + ' ' + contact.lname %></td>
       <td><%= contact.email %></td>
       <td><%= contact.phone %></td>
       <td><%= contact.avatar %></td>
       <td><%= link_to 'Show', contact_path(contact), :class => "btn btn-default" %></td>
-      <td><%= link_to 'Edit', edit_contact_path(contact), :class => "btn btn-warning" %></td>
-      <td><%= link_to 'Destroy', contact_path(contact),
-              method: :delete,
-              data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+      <td>
+        <%= link_to edit_contact_path(contact), :class => "btn btn-warning" do %>
+          <span class="glyphicon glyphicon-edit"></span> Edit
+        <% end %>
+      </td>
+      <td>
+        <%= link_to contact_path(contact), method: :delete,
+          data: { confirm: 'Delete ' + contact.fname + ' ' + contact.lname + '?' }, :class => "btn btn-danger" do %>
+            <span class="glyphicon glyphicon-trash"></span> Remove
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>

@@ -13,35 +13,35 @@
 <% end %>
 
 <div class="form-group">
-  <%= f.label 'fname', 'First Name' %><br>
+  <%= f.label :fname, 'First Name' %><br>
   <%= f.text_field :fname, :class => "form-control" %>
 </div>
 
 <div class="form-group">
-  <%= f.label 'lname', 'Last Name' %><br>
+  <%= f.label :lname, 'Last Name' %><br>
   <%= f.text_field :lname, :class => "form-control" %>
 </div>
 
 <div class="form-group">
-  <%= f.label 'email', 'E-mail Address' %><br>
+  <%= f.label :email, 'E-mail Address' %><br>
   <%= f.text_field :email, :class => "form-control", :placeholder=>"me@example.com" %>
 </div>
 
 <div class="form-group">
-  <%= f.label 'phone', 'Phone Number' %><br>
+  <%= f.label :phone, 'Phone Number' %><br>
   <%= f.text_field :phone, :class => "form-control", :placeholder=>"012-345-6789" %>
 </div>
 
 <div class="form-group">
-  <%= f.label :photo %>
-  <div class="input-group">
-    <span class="input-group-btn">
-      <span class="btn btn-default btn-file">
-        Browse&hellip; <%= f.file_field :photo %>
+    <%= f.label :photo %>
+    <div class="input-group">
+      <span class="input-group-btn">
+        <span class="btn btn-default btn-file">
+          Browse&hellip; <%= f.file_field :photo %>
+        </span>
       </span>
-    </span>
-    <input type="text" class="form-control" readonly>
-  </div>
+      <input type="text" class="form-control" readonly>
+    </div>
 </div>
 
 <%= button_tag(type: 'submit', class: "btn btn-primary") do %>

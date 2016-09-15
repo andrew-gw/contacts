@@ -13,15 +13,9 @@
 </div>
 <% end %>
 
-<p>
-  <strong>First Name:</strong>
-  <%= @contact.fname %>
-</p>
+<%= contact_avatar(@contact, class: 'media-object img-circle', style: 'width:96px;height:96px;') %>
 
-<p>
-  <strong>Last Name:</strong>
-  <%= @contact.lname %>
-</p>
+<h4><%= @contact.name %></h4>
 
 <p>
   <strong>E-mail:</strong>

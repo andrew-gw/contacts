@@ -16,7 +16,7 @@ module Avatarable
   end
 
   def avatar_size
-    150
+    192
   end
 
   def avatar_param

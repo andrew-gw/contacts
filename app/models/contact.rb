@@ -14,6 +14,6 @@ class Contact < ActiveRecord::Base
 
   # required for avatarable
   def avatar_text
-    fname.chr
+    name
   end
 end

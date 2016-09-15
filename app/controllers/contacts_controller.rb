@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.all
+    @contacts = Contact.order('lname ASC')
   end
 
   def show
@@ -15,6 +15,16 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
   end
 
+  def create
+    @contact = Contact.new(contact_params)
+
+    if @contact.save
+      redirect_to @contact
+    else
+      render 'new'
+    end
+  end
+
   def update
     @contact = Contact.find(params[:id])
 
@@ -25,14 +35,11 @@ class ContactsController < ApplicationController
     end
   end
 
-  def create
-    @contact = Contact.new(contact_params)
+  def destroy
+    @contact = Contact.find(params[:id])
+    @contact.destroy
 
-    if @contact.save
-      redirect_to @contact
-    else
-      render 'new'
-    end
+    redirect_to contacts_path
   end
 
   private

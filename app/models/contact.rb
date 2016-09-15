@@ -1,8 +1,8 @@
 class Contact < ActiveRecord::Base
-  extend Dragonfly::Model
+  # extend Dragonfly::Model
   include Avatarable
 
-  dragonfly_accessor :photo
+  # dragonfly_accessor :photo
 
   validates :fname, :lname, presence: true
 

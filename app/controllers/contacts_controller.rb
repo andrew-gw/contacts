@@ -29,7 +29,7 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
 
     if @contact.update(contact_params)
-      redirect_to @contact
+      redirect_to @contact, notice: 'Contact successfully updated!'
     else
       render 'edit'
     end

@@ -8,6 +8,11 @@ class Contact < ActiveRecord::Base
 
   belongs_to :user
 
+  def name
+    [fname, lname].join(' ')
+  end
+
+  # required for avatarable
   def avatar_text
     fname.chr
   end

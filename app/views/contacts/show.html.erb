@@ -1,3 +1,16 @@
+<div class="page-header">
+  <h1>Contact Details</h1>
+  <%= link_to 'View All', contacts_path, :class => "btn btn-default" %>
+</div>
+
+<!-- Render flash notice if present -->
+<% if flash[:notice] -%>
+<div class="alert alert-success alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <%= flash[:notice] %>
+</div>
+<% end %>
+
 <p>
   <strong>First Name:</strong>
   <%= @contact.fname %>
@@ -23,7 +36,6 @@
   <%= @contact.avatar %>
 </p>
 
-<%= link_to 'Back', contacts_path, :class => "btn btn-default" %>
 <%= link_to edit_contact_path(@contact), :class => "btn btn-warning" do %>
   <span class="glyphicon glyphicon-edit"></span> Edit
 <% end %>

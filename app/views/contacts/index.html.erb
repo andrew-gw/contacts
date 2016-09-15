@@ -1,6 +1,8 @@
 <h1>Listing contacts</h1>
 
-<%= link_to 'Add contact', new_contact_path %>
+<%= link_to new_contact_path, :class => "btn btn-primary" do %>
+  <span class="glyphicon glyphicon-plus"></span> Add Contact
+<% end %>
 
 <table>
   <tr>
@@ -19,11 +21,11 @@
       <td><%= contact.email %></td>
       <td><%= contact.phone %></td>
       <td><%= contact.avatar %></td>
-      <td><%= link_to 'Show', contact_path(contact) %></td>
-      <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+      <td><%= link_to 'Show', contact_path(contact), :class => "btn btn-default" %></td>
+      <td><%= link_to 'Edit', edit_contact_path(contact), :class => "btn btn-warning" %></td>
       <td><%= link_to 'Destroy', contact_path(contact),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
     </tr>
   <% end %>
 </table>

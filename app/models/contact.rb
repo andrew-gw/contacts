@@ -1,12 +1,12 @@
 class Contact < ActiveRecord::Base
-  # extend Dragonfly::Model
+  extend Dragonfly::Model
   include Avatarable
 
-  # dragonfly_accessor :photo
-
-  validates :fname, :lname, presence: true
+  dragonfly_accessor :photo
 
   belongs_to :user
+
+  validates :fname, :lname, :email, presence: true
 
   def name
     [fname, lname].join(' ')

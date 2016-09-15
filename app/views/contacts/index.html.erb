@@ -1,0 +1,26 @@
+<h1>Listing contacts</h1>
+
+<%= link_to 'Add contact', new_contact_path %>
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>E-mail</th>
+    <th>Phone</th>
+    <th>Avatar</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @contacts.each do |contact| %>
+    <tr>
+      <td><%= contact.fname %></td>
+      <td><%= contact.lname %></td>
+      <td><%= contact.email %></td>
+      <td><%= contact.phone %></td>
+      <td><%= contact.avatar %></td>
+      <td><%= link_to 'Show', contact_path(contact) %></td>
+      <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+    </tr>
+  <% end %>
+</table>

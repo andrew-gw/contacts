@@ -1,7 +1,5 @@
 class ContactsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :find_contact_for_user, except: [:index, :new, :create]
-  
+
   def index
     @contacts = Contact.all.order(:lname, :fname)
   end
@@ -22,7 +20,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
 
     if @contact.save
-      redirect_to @contact, notice: 'Contact successfully created!'
+      redirect_to @contact, notice: "#{@contact.name} was created"
     else
       render 'new'
     end
@@ -32,7 +30,7 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
 
     if @contact.update(contact_params)
-      redirect_to @contact, notice: 'Contact successfully updated!'
+      redirect_to @contact, notice: "#{@contact.name} was updated"
     else
       render 'edit'
     end
@@ -42,7 +40,7 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
     @contact.destroy
 
-    redirect_to contacts_path, notice: 'Contact successfully removed!'
+    redirect_to contacts_path, notice: "#{@contact.name} was removed"
   end
 
   private

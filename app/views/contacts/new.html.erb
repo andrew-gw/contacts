@@ -1,7 +1,8 @@
 <div class="page-header">
-  <h1>New Contact</h1>
+  <h1>Add Contact</h1>
+  <%= link_to contacts_path, :class => "btn btn-default" do %>
+    <span class="glyphicon glyphicon-remove"></span> Cancel
+  <% end %>
 </div>
 
 <%= render 'form' %>
-
-<%= link_to 'Cancel', contacts_path, :class => "btn btn-default" %>

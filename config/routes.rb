@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   get  '/signup',  to: 'users#new'
+  post '/signup',  to: 'users#create'
 
   resources :contacts
+  resources :users
 
   # Avatar routes
   get "avatar/:size/:background/:text" => Dragonfly.app.endpoint { |params, app|

@@ -44,6 +44,7 @@ GEM
       execjs
     avatar_magick (1.0.2)
       dragonfly (~> 1.0)
+    bcrypt (3.1.11)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -168,6 +169,7 @@ PLATFORMS
 
 DEPENDENCIES
   avatar_magick (~> 1.0.1)
+  bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.2)

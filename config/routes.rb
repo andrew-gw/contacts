@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get  '/signup',  to: 'users#new'
+
   resources :contacts
 
   # Avatar routes

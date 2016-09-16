@@ -11,9 +11,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      remember user
-      flash[:success] = "Welcome, #{@user.name}!"
-      redirect_to @user
+      remember @user
+      flash[:notice] = "Welcome, #{@user.name}!"
+      redirect_to contacts_url
     else
       render 'new'
     end
@@ -25,4 +25,5 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
+
 end

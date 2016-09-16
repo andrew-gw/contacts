@@ -1,5 +1,7 @@
 class ContactsController < ApplicationController
 
+  before_action :logged_in_user
+
   def index
     @contacts = Contact.all.order(:lname, :fname)
   end
@@ -46,5 +48,13 @@ class ContactsController < ApplicationController
   private
     def contact_params
       params.require(:contact).permit(:fname, :lname, :email, :phone, :photo, :remove_photo)
+    end
+
+    # Confirms a logged-in user.
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
     end
 end

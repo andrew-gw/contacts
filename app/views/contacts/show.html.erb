@@ -7,14 +7,6 @@
   <% end %>
 </div>
 
-<!-- Render flash notice if present -->
-<% if flash[:notice] -%>
-<div class="alert alert-success alert-dismissable">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <%= flash[:notice] %>
-</div>
-<% end %>
-
 <%= contact_avatar(@contact, class: 'media-object img-circle', style: 'width:96px;height:96px;') %>
 
 <h4><%= @contact.name %></h4>

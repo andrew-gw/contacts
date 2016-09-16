@@ -7,17 +7,6 @@
   <% end %>
 </div>
 
-<%= link_to "Log out", logout_path, method: :delete %>
-
-<!-- Render flash notice if present -->
-<% if flash[:notice] -%>
-<div class="alert alert-success alert-dismissable">
-  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <%= flash[:notice] %>
-</div>
-<% end %>
-
-<!-- <div class="list-group"> -->
 <% @contacts.each do |contact| %>
   <%= link_to contact_path(contact), :class => 'list-group-item' do %>
     <div class="media contact">

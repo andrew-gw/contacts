@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= yield :title %></title>
     <%= csrf_meta_tags %>
 
@@ -10,9 +11,21 @@
 
   <body>
     <%= render 'layouts/header' %>
+
     <div class="container">
-      <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <!-- Render flash notice if present -->
+      <% if flash[:notice] -%>
+      <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= flash[:notice] %>
+      </div>
+      <% end %>
+
+      <% if flash[:danger] -%>
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= flash[:danger] %>
+      </div>
       <% end %>
 
       <%= yield %>

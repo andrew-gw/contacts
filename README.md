@@ -1,24 +1,9 @@
-# README
+# Contacts
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Ruby on Rails application to manage contacts.
 
-Things you may want to cover:
+## Resources
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html)
+- [Default Gmail style avatars in Rails](http://bjedrocha.com/rails/2016/01/06/default-gmail-style-avatars-in-rails/)
+- [Basic Login](https://www.railstutorial.org/book/basic_login)

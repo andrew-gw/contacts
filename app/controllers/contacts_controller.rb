@@ -1,4 +1,7 @@
 class ContactsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :find_contact_for_user, except: [:index, :new, :create]
+  
   def index
     @contacts = Contact.all.order(:lname, :fname)
   end

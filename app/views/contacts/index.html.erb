@@ -7,6 +7,8 @@
   <% end %>
 </div>
 
+<%= link_to "Log out", logout_path, method: :delete %>
+
 <!-- Render flash notice if present -->
 <% if flash[:notice] -%>
 <div class="alert alert-success alert-dismissable">

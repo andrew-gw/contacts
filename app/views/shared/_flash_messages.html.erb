@@ -1,0 +1,12 @@
+<!-- Render flash notice if present -->
+<% if flash[:notice] -%>
+<div class="alert alert-success alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<%= flash[:notice] %>
+</div>
+<% elsif flash[:danger] -%>
+<div class="alert alert-danger alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<%= flash[:danger] %>
+</div>
+<% end %>

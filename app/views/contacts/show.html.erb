@@ -1,30 +1,44 @@
 <% provide(:title, @contact.name) %>
 
 <div class="page-header">
-  <h1>Contact Details</h1>
-  <%= link_to contacts_path, :class => "btn btn-default" do %>
-    <span class="glyphicon glyphicon-chevron-left"></span> All Contacts
-  <% end %>
+	<h1>Contact Details</h1>
+	<%= link_to contacts_path, :class => "btn btn-default" do %>
+	<span class="glyphicon glyphicon-chevron-left"></span> All Contacts
+	<% end %>
 </div>
 
-<%= contact_avatar(@contact, class: 'media-object img-circle', style: 'width:96px;height:96px;') %>
+<div class="row">
 
-<h4><%= @contact.name %></h4>
+	<%= render 'shared/flash_messages' %>
 
-<p>
-  <strong>E-mail:</strong>
-  <%= @contact.email %>
-</p>
+	<div class="col-sm-1">
+		<%= contact_avatar(@contact, class: 'media-object img-circle', style: 'width:96px;height:96px;') %>
+	</div>
 
-<p>
-  <strong>Phone Number:</strong>
-  <%= @contact.phone %>
-</p>
+	<div class="col-sm-8 col-md-6 col-lg-5 col-sm-offset-1">
 
-<%= link_to edit_contact_path(@contact), :class => "btn btn-warning" do %>
-  <span class="glyphicon glyphicon-edit"></span> Edit
-<% end %>
-<%= link_to contact_path(@contact), method: :delete,
-      data: { confirm: 'Remove ' + @contact.name + '?' }, :class => "btn btn-danger" do %>
-      <span class="glyphicon glyphicon-trash"></span> Remove
-    <% end %>
+		<h3><%= @contact.name %></h3>
+
+		<p>
+			<%= @contact.email %>
+		</p>
+
+		<p>
+			<%= @contact.phone %>
+		</p>
+
+		<p class="timestamp text-muted">
+			Added <%= time_ago_in_words(@contact.created_at) %> ago
+		</p>
+
+		<%= link_to edit_contact_path(@contact), :class => "btn btn-warning" do %>
+		<span class="glyphicon glyphicon-edit"></span> Edit
+		<% end %>
+
+		<%= link_to contact_path(@contact), method: :delete,
+		data: { confirm: 'Remove ' + @contact.name + '?' }, :class => "btn btn-danger" do %>
+		<span class="glyphicon glyphicon-trash"></span> Remove
+		<% end %>
+
+	</div>
+</div>

@@ -1,34 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= yield :title %></title>
-    <%= csrf_meta_tags %>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%= yield :title %></title>
+	<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= render 'layouts/header' %>
+<body>
+	<%= render 'layouts/header' %>
 
-    <div class="container">
-      <!-- Render flash notice if present -->
-      <% if flash[:notice] -%>
-      <div class="alert alert-success alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <%= flash[:notice] %>
-      </div>
-      <% end %>
-
-      <% if flash[:danger] -%>
-      <div class="alert alert-danger alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <%= flash[:danger] %>
-      </div>
-      <% end %>
-
-      <%= yield %>
-    </div>
-  </body>
+	<div class="container">
+		<%= yield %>
+	</div>
+</body>
 </html>

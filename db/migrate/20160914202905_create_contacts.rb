@@ -5,6 +5,7 @@ class CreateContacts < ActiveRecord::Migration[5.0]
       t.string :lname
       t.string :email
       t.string :phone
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps
     end

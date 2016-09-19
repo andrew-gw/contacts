@@ -16,9 +16,9 @@
 	<div class="cell">
 		<%= link_to contact_path(contact), :class => 'contact' do %>
 
-		<div class="Media">
-			<%= contact_avatar(contact, class: 'Media-figure', style: 'width:64px;height:64px;', alt:'Photo for contact') %>
-			<div class="Media-body">
+		<div class="media-element">
+			<%= contact_avatar(contact, class: 'media-figure', style: 'width:64px;height:64px;', alt:"Photo for #{contact.name}") %>
+			<div class="media-body">
 				<strong><%= contact.name %></strong>
 				<p><%= contact.email %></p>
 				<p><%= contact.phone %></p>

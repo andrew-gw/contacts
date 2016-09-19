@@ -2,53 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-a,
-a:hover,
-a:focus {
+a.contact,
+a.contact:hover,
+a.contact:focus {
 	text-decoration: none;
 	color: black;
 }
 
-.contact {
+a.contact {
 	display: flex;
   transition: all 0.24s cubic-bezier(0.075, 0.820, 0.165, 1.000);
   border-radius: 4px;
 }
 
-.contact:hover {
+a.contact:hover {
 	background: hsl(0,0%,94%);
 }
 
-.contact:active {
+a.contact:active {
 	transform: scale(0.94);
 }
 
-.Media {
+.media-element {
 	display: flex;
 	align-items: center;
   margin: 0.62em;
   overflow: hidden;
 }
 
-.Media-figure {
+.media-figure {
 	margin-right: 1em;
 	border-radius: 50%;
 }
 
-.Media-body {
+.media-body {
 	flex: 1;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
-.Media-body p {
+.media-body p {
 	margin: 0;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
-.Media-body strong {
+.media-body strong {
 	font-size: 1.24em;
 }
 

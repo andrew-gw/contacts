@@ -1,30 +1,39 @@
 <% provide(:title, "All Contacts") %>
 
 <div class="page-header">
-  <h1><%= yield :title %></h1>
-  <%= link_to new_contact_path, :class => "btn btn-primary" do %>
-  <span class="glyphicon glyphicon-plus"></span> Add Contact
-  <% end %>
+	<h1><%= yield :title %></h1>
+	<%= link_to new_contact_path, :class => "btn btn-primary" do %>
+	<i class="glyphicon glyphicon-plus"></i> Add Contact
+	<% end %>
 </div>
 
 <%= render 'shared/flash_messages' %>
 
-<% if @contacts.each do |contact| %>
-  <%= link_to contact_path(contact), :class => 'list-group-item' do %>
-    <div class="media contact">
-      <div class="media-left media-middle">
-        <%= contact_avatar(contact, class: 'media-object img-circle', style: 'width:48px;height:48px;', alt:'Photo for contact') %>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><%= contact.name %></h4>
-        <%= contact.email %><br/>
-        <%= contact.phone %><br/>
-      </div>
-    </div>
-  <% end %>
-<% end.empty? %>
-  <p class="lead text-center text-muted">No contacts</p>
-<% else %>
+<div class="grid">
+
+	<% if @contacts.each do |contact| %>
+
+	<div class="cell">
+
+		<%= link_to contact_path(contact), :class => 'contact' do %>
+		<div class="Media">
+			<%= contact_avatar(contact, class: 'Media-figure', style: 'width:64px;height:64px;', alt:'Photo for contact') %>
+			<div class="Media-body">
+				<strong><%= contact.name %></strong>
+				<p><%= contact.email %></p>
+				<p><%= contact.phone %></p>
+			</div>
+		</div>
+		<% end %>
+
+
+	</div>
+
+	<% end.empty? %>
+	</div>
+	<p class="lead text-center text-muted">No contacts</p>
+	<% else %>
+	</div>
 	<hr />
 	<p class="lead text-center text-muted"><%= pluralize(@contacts.count, "contact") %></p>
-<% end %>
+	<% end %>

@@ -47,6 +47,7 @@ class ContactsController < ApplicationController
 	end
 
 	private
+
 	def contact_params
 		params.require(:contact).permit(:fname, :lname, :email, :phone, :photo, :remove_photo)
 	end

@@ -1,9 +1,9 @@
 <% provide(:title, "Edit Contact") %>
 
 <div class="page-header">
-  <h1>Edit Contact</h1>
+  <h1><%= yield :title %></h1>
   <%= link_to contact_path(@contact), :class => "btn btn-default" do %>
-    <span class="glyphicon glyphicon-remove"></span> Cancel
+    <i class="glyphicon glyphicon-remove"></i> Cancel
   <% end %>
 </div>
 
@@ -11,5 +11,5 @@
 
 <%= link_to contact_path(@contact), method: :delete,
       data: { confirm: 'Remove ' + @contact.name + '?' }, :class => "btn btn-danger" do %>
-      <span class="glyphicon glyphicon-trash"></span> Remove
+      <i class="glyphicon glyphicon-trash"></i> Remove
     <% end %>

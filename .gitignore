@@ -22,3 +22,6 @@
 
 # Ignore finder thumbnail caches
 .DS_Store
+
+# Ignore Dragonfly images
+/public/system/dragonfly/

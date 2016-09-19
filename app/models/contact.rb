@@ -5,7 +5,7 @@ class Contact < ActiveRecord::Base
 
 	belongs_to :user
 
-	validates :fname, :lname, :email, :user_id, presence: true
+	validates :fname, :lname, :user_id, presence: true
 
 	def name
 		[fname, lname].join(' ')

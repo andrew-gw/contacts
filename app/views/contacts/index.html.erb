@@ -14,8 +14,8 @@
 	<% if @contacts.each do |contact| %>
 
 	<div class="cell">
-
 		<%= link_to contact_path(contact), :class => 'contact' do %>
+
 		<div class="Media">
 			<%= contact_avatar(contact, class: 'Media-figure', style: 'width:64px;height:64px;', alt:'Photo for contact') %>
 			<div class="Media-body">
@@ -24,16 +24,20 @@
 				<p><%= contact.phone %></p>
 			</div>
 		</div>
+
 		<% end %>
-
-
 	</div>
 
 	<% end.empty? %>
-	</div>
-	<p class="lead text-center text-muted">No contacts</p>
-	<% else %>
-	</div>
-	<hr />
-	<p class="lead text-center text-muted"><%= pluralize(@contacts.count, "contact") %></p>
-	<% end %>
+
+</div>
+
+<p class="lead text-center text-muted">No contacts</p>
+
+<% else %>
+
+</div>
+
+<hr />
+<p class="lead text-center text-muted"><%= pluralize(@contacts.count, "contact") %></p>
+<% end %>

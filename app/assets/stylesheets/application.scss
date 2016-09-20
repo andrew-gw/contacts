@@ -19,23 +19,22 @@ textarea {
   font-size: 16px;
 }
 
-
 .navbar-default {
-	background: hsla(0,0%,96%,1);
+	background: hsla(0,0%,94%,1);
 	border: none;
 }
 
 @supports (backdrop-filter: blur()) {
 	.navbar-default {
-		background: hsla(0,0%,96%,0.91);
-		backdrop-filter: blur(1em) saturate(2);
+		background: hsla(0,0%,94%,0.83);
+		backdrop-filter: blur(1em) saturate(2.62);
 	}
 }
 
 @supports (-webkit-backdrop-filter: blur()) {
 	.navbar-default {
-		background: hsla(0,0%,96%,0.91);
-		-webkit-backdrop-filter: blur(1em) saturate(2);
+		background: hsla(0,0%,94%,0.83);
+		-webkit-backdrop-filter: blur(1em) saturate(2.62);
 	}
 }
 
